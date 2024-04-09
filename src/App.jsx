@@ -1,5 +1,6 @@
 import Header from './components/Header';
 import Sidebar from './components/Sidebar';
+import RandomRecipe from './pages/RandomRecipe';
 import { createContext, useState } from 'react';
 
 export const SidebarContext = createContext(null);
@@ -14,6 +15,7 @@ function App() {
         <Header/>
         <Sidebar/>
       </SidebarContext.Provider>
+      <RandomRecipe/>
     </div>
   )
 }
