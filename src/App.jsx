@@ -1,9 +1,19 @@
 import Header from './components/Header';
+import Sidebar from './components/Sidebar';
+import { createContext, useState } from 'react';
+
+export const SidebarContext = createContext(null);
 
 function App() {
+
+  const [isExpanded, setIsExpanded] = useState(false);
+
   return (
     <div className="App w-full h-auto bg-white flex flex-none flex-col justify-start items-center">
-      <Header/>
+      <SidebarContext.Provider value={[isExpanded, setIsExpanded]}>
+        <Header/>
+        <Sidebar/>
+      </SidebarContext.Provider>
     </div>
   )
 }

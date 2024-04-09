@@ -1,6 +1,11 @@
 import { List } from '@phosphor-icons/react';
+import { useContext } from 'react';
+import { SidebarContext } from '../App';
 
 const Header = () => {
+
+    const [isExpanded, setIsExpanded] = useContext(SidebarContext);
+
     return (
         <header className="header w-full h-16 bg-white flex flex-none flex-row justify-center items-center border border-gray-200 sticky top-0">
             <div className="header-wrapper w-4/5 h-auto flex flex-none flex-row justify-between items-center">
@@ -9,7 +14,7 @@ const Header = () => {
                     <a href="" className="text-primary font-dm-sans text-base underline-offset-8 hover:underline">Random Recipe</a>
                     <a href="" className="text-primary font-dm-sans text-base underline-offset-8 hover:underline">Search Recipe</a>
                 </div>
-                <List size={28} weight='bold' className='text-primary lg:hidden'/>
+                <List size={28} weight='bold' className='text-primary lg:hidden' onClick={() => setIsExpanded(!isExpanded)}/>
             </div>
         </header>
     )
