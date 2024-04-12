@@ -16,7 +16,6 @@ function App() {
         <Header/>
         <Sidebar/>
       </SidebarContext.Provider>
-      <RandomRecipe/>
       <SearchResults/> 
     </div>
   )
