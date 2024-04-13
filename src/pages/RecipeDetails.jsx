@@ -1,14 +1,17 @@
 import { CaretLeft, Globe } from '@phosphor-icons/react';
 import useFetch from '../hooks/useFetch';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 
 const RecipeDetails = () => {
 
     // Navigator
     const navigate = useNavigate();
 
+    // Get recipeId from the URL Parameter
+    const { recipeId } = useParams();
+
     // Fetch data from the api using specific recipe id
-    const {data, isLoading, error} = useFetch(`https://www.themealdb.com/api/json/v1/1/lookup.php?i=52772`);
+    const {data, isLoading, error} = useFetch(`https://www.themealdb.com/api/json/v1/1/lookup.php?i=${recipeId}`);
 
     // Function to return a ingredients array
     function generateIngredientsArray(){
