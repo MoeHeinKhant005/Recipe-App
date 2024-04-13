@@ -1,7 +1,11 @@
 import { CaretLeft, Globe } from '@phosphor-icons/react';
 import useFetch from '../hooks/useFetch';
+import { useNavigate } from 'react-router-dom';
 
 const RecipeDetails = () => {
+
+    // Navigator
+    const navigate = useNavigate();
 
     // Fetch data from the api using specific recipe id
     const {data, isLoading, error} = useFetch(`https://www.themealdb.com/api/json/v1/1/lookup.php?i=52772`);
@@ -21,7 +25,7 @@ const RecipeDetails = () => {
 
     return (
         <div className="recipe-details w-full h-auto bg-white flex flex-none flex-col justify-start items-center gap-y-4 py-6">
-            <CaretLeft size={28} className='text-primary self-start mx-6 my-3'/>
+            <CaretLeft size={28} className='text-primary self-start mx-6 my-3' onClick={() => navigate(-1)}/>
 
             { !isLoading && <img src={data.meals[0].strMealThumb} alt="" className="recipe-img w-4/5 h-auto" /> }
 
