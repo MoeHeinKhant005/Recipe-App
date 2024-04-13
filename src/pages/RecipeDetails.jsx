@@ -27,7 +27,7 @@ const RecipeDetails = () => {
     }
 
     return (
-        <div className="recipe-details w-full h-auto bg-white flex flex-none flex-col justify-start items-center gap-y-4 py-6">
+        <div className="recipe-details w-full h-auto bg-white flex flex-none flex-col justify-start items-center gap-y-4 py-4">
             <CaretLeft size={28} className='text-primary self-start mx-6 my-3' onClick={() => navigate(-1)}/>
 
             { !isLoading && <img src={data.meals[0].strMealThumb} alt="" className="recipe-img w-4/5 h-auto" /> }
