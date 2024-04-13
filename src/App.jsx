@@ -2,6 +2,7 @@ import Header from './components/Header';
 import Sidebar from './components/Sidebar';
 import RandomRecipe from './pages/RandomRecipe';
 import SearchResults from './pages/SearchResult';
+import RecipeDetails from './pages/RecipeDetails';
 import { createContext, useState } from 'react';
 
 export const SidebarContext = createContext(null);
@@ -17,6 +18,7 @@ function App() {
         <Sidebar/>
       </SidebarContext.Provider>
       <SearchResults/> 
+      <RecipeDetails/>
     </div>
   )
 }
